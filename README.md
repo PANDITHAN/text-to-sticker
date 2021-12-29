@@ -3,8 +3,9 @@
 
 You send it a text, it will return you the content as a telegram sticker. A working example for the bot can be found [here.](https://telegram.dog/somestickerbot)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
+<p align="center">
+<a href="https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Flegendx22%2FGRANDROBOT&template=https://github.com/PANDITHAN/text-to-sticker"><img src="https://github.com/PR0FESS0R-99/Buttons/blob/Professor-99/heroku/herokudeploy-01.svg" alt="PR0FESS0R-99" border="0" height="125" width="200" align="center" /></a>
+</p>
 ## Cloning and Run:
 1. `git clone https://github.com/eyaadh/stickerBot.git`, to clone the repository.
 2. `cd stickerBot`, to enter the directory.
