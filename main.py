@@ -134,6 +134,15 @@ async def help_handler(c: Client, m: Message):
     )
 
 
+
+@some_sticker_bot.on_message(filters.command("about"))
+async def help_handler(c: Client, m: Message):
+    await m.reply_text(
+        "About text coming soon",
+        disable_web_page_preview=True
+    )
+
+
 async def create_sticker(c: Client, m: Message):
     if len(m.text) < 100:
         body_font_size = 35
