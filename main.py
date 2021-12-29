@@ -12,10 +12,6 @@ import asyncio
 import datetime
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid, UserNotParticipant, UserBannedInChannel
-from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
-from database import Database
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from textwrap import TextWrapper
 from pyrogram import Client, idle, filters
 from pyrogram.types import Message
