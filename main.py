@@ -23,9 +23,17 @@ logging.basicConfig(
 )
 
 START_TEXT = """👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ
+
 𝙸 𝚊𝚖 𝚊𝚗 𝚝𝚎𝚡𝚝 𝚝𝚘 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚋𝚘𝚝
+
 𝙸 𝚓𝚞𝚜𝚝 𝚌𝚛𝚎𝚊𝚝𝚎 𝚝𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚏𝚛𝚘𝚖 𝚝𝚑𝚎 𝚝𝚎𝚡𝚝 𝚖𝚎𝚜𝚜𝚊𝚐𝚎𝚜 𝚢𝚘𝚞 𝚜𝚎𝚗𝚍 𝚖𝚎
+
 ©[M-STER TECH](https://t.me/M_STER_TECH)"""
+
+HELP_ANEE = """👋Hi ᴅᴇᴀʀ
+
+I do not have much to say on help - I just create telegram stickers from the text messages you send me
+        My update channel [M-STER TECH](https://t.me/M_STER_TECH)"""
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -57,7 +65,6 @@ else:
         bot_token=bot_api_key,
         workers=200
     )
-
 
 async def get_y_and_heights(text_wrapped, dimensions, margin, font):
     _, descent = font.getmetrics()
@@ -144,21 +151,22 @@ async def help_handler(c: Client, m: Message):
     )
 
 
-@some_sticker_bot.on_message(filters.command("help"))
+@some_sticker_bot.on_message(filters.private & filters.command(["help"]))
 async def help_handler(c: Client, m: Message):
     await m.reply_text(
-        "Hi, I do not have much to say on help - I just create telegram stickers from the text messages you send me. "
-        "\nMy update channel [M-STER TECH](https://t.me/M_STER_TECH) ",
-        disable_web_page_preview=True
+        text=HELP_ANEE.format(m.from_user.mention),
+        disable_web_page_preview=True,
+	reply_markup=MINNAL_MURALI
     )
 
 
 
-@some_sticker_bot.on_message(filters.command("about"))
+@some_sticker_bot.on_message(filters.private & filters.command(["about"]))
 async def help_handler(c: Client, m: Message):
     await m.reply_text(
-        "About text coming soon",
-        disable_web_page_preview=True
+        text=PANDITHAN.format(m.from_user.mention),
+        disable_web_page_preview=True,
+	reply_markup=MINNAL_MURALI
     )
 
 
@@ -247,17 +255,24 @@ async def create_sticker(c: Client, m: Message):
 
 @some_sticker_bot.on_message(filters.text & filters.private & (~filters.command("start") | ~filters.command("help")))
 async def create_sticker_private_handler(c: Client, m: Message):
-    s = await m.reply_text("...")
+    s = await m.reply_text("WAIT FOR SECONDS")
     await create_sticker(c, m)
     await s.delete()
 
 
 @some_sticker_bot.on_message(filters.command(["sticker", "s"]) & filters.reply & filters.group)
 async def create_sticker_group_handler(c: Client, m: Message):
-    s = await m.reply_text("...", reply_to_message_id=m.message_id)
+    s = await m.reply_text("WAIT FOR SECONDS", reply_to_message_id=m.message_id)
     await create_sticker(c, m.reply_to_message)
     await s.delete()
 
+PANDITHAN = """COMIG SOON"""
+
+MINNAL_MURALI = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('UPDATE CHANNEL', url='https://t.me/M_STER_TECH'),
+        ]]
+    )
 
 async def main():
     await some_sticker_bot.start()
