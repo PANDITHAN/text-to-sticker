@@ -126,7 +126,7 @@ async def start_handler(c: Client, m: Message):
 "𝙸 𝚓𝚞𝚜𝚝 𝚌𝚛𝚎𝚊𝚝𝚎 𝚝𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚏𝚛𝚘𝚖 𝚝𝚑𝚎 𝚝𝚎𝚡𝚝 𝚖𝚎𝚜𝚜𝚊𝚐𝚎𝚜 𝚢𝚘𝚞 𝚜𝚎𝚗𝚍 𝚖𝚎\n"
 "\n©[M-STER TECH](https://t.me/M_STER_TECH)",
         disable_web_page_preview=True
-reply_markup=InlineKeyboardMarkup(
+        reply_markup=InlineKeyboardMarkup(
 			  [[InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url=f"https://telegram.me/M_STER_TECH")]]
     )
 
