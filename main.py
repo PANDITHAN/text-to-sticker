@@ -136,9 +136,7 @@ async def rounded_rectangle(rectangle, xy, corner_radius, fill=None, outline=Non
 
 
 @some_sticker_bot.on_message(filters.private & filters.command(["start"]))
-async def start(bot, update):
-    if not await db.is_user_exist(update.from_user.id):
-	    await db.add_user(update.from_user.id)
+async def help_handler(c: Client, m: Message):
     await update.reply_text(
         text=START_TEXT.format(update.from_user.mention),
         disable_web_page_preview=True,
