@@ -15,6 +15,16 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 
+START_TEXT = """👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ
+𝙸 𝚊𝚖 𝚊𝚗 𝚝𝚎𝚡𝚝 𝚝𝚘 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚋𝚘𝚝
+𝙸 𝚓𝚞𝚜𝚝 𝚌𝚛𝚎𝚊𝚝𝚎 𝚝𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚏𝚛𝚘𝚖 𝚝𝚑𝚎 𝚝𝚎𝚡𝚝 𝚖𝚎𝚜𝚜𝚊𝚐𝚎𝚜 𝚢𝚘𝚞 𝚜𝚎𝚗𝚍 𝚖𝚎
+©[M-STER TECH](https://t.me/M_STER_TECH)"""
+
+START_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('UPDATE CHANNEL', url='https://t.me/M_STER_TECH'),
+        ]]
+    )
 logging.getLogger(__name__)
 
 is_env = bool(os.environ.get("ENV", None))
@@ -118,16 +128,14 @@ async def rounded_rectangle(rectangle, xy, corner_radius, fill=None, outline=Non
                     (bottom_right_point[0], bottom_right_point[1] - corner_radius)], fill=outline)
 
 
-@some_sticker_bot.on_message(filters.command("start"))
-async def start_handler(c: Client, m: Message):
-    await m.reply_text(
-        "👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ\n"
-"\n𝙸 𝚊𝚖 𝚊𝚗 𝚝𝚎𝚡𝚝 𝚝𝚘 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚋𝚘𝚝\n"
-"𝙸 𝚓𝚞𝚜𝚝 𝚌𝚛𝚎𝚊𝚝𝚎 𝚝𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚏𝚛𝚘𝚖 𝚝𝚑𝚎 𝚝𝚎𝚡𝚝 𝚖𝚎𝚜𝚜𝚊𝚐𝚎𝚜 𝚢𝚘𝚞 𝚜𝚎𝚗𝚍 𝚖𝚎\n"
-"\n©[M-STER TECH](https://t.me/M_STER_TECH)",
-        disable_web_page_preview=True
-        reply_markup=InlineKeyboardMarkup(
-			  [[InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url=f"https://telegram.me/M_STER_TECH")]]
+@some_sticker_bot.on_message(filters.private & filters.command(["start"]))
+async def start(bot, update):
+    if not await db.is_user_exist(update.from_user.id):
+	    await db.add_user(update.from_user.id)
+    await update.reply_text(
+        text=START_TEXT.format(update.from_user.mention),
+        disable_web_page_preview=True,
+	reply_markup=START_BUTTONS
     )
 
 
