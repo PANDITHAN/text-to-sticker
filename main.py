@@ -4,6 +4,7 @@ import asyncio
 import secrets
 import logging
 import configparser
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from textwrap import TextWrapper
 from pyrogram import Client, idle, filters
 from pyrogram.types import Message
@@ -124,6 +125,8 @@ async def start_handler(c: Client, m: Message):
 "\n𝙸 𝚊𝚖 𝚊𝚗 𝚝𝚎𝚡𝚝 𝚝𝚘 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚋𝚘𝚝\n"
 "𝙸 𝚓𝚞𝚜𝚝 𝚌𝚛𝚎𝚊𝚝𝚎 𝚝𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚏𝚛𝚘𝚖 𝚝𝚑𝚎 𝚝𝚎𝚡𝚝 𝚖𝚎𝚜𝚜𝚊𝚐𝚎𝚜 𝚢𝚘𝚞 𝚜𝚎𝚗𝚍 𝚖𝚎\n"
 "\n©[M-STER TECH](https://t.me/M_STER_TECH)",
+reply_markup=InlineKeyboardMarkup(
+			  [[InlineKeyboardButton(text="⚙ Join Updates Channel ⚙", url=f"https://telegram.me/M_STER_TECH")]]
         disable_web_page_preview=True
     )
 
