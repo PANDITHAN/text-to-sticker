@@ -217,14 +217,14 @@ async def create_sticker(c: Client, m: Message):
     await rounded_rectangle(draw, ((90, in_y), (512, rec_y + line_heights[-1])), 10, fill="#000000")
 
     f_user = m.from_user.first_name + " " + m.from_user.last_name if m.from_user.last_name else m.from_user.first_name
-    draw.text((100, y), f"{f_user}:»", "#ffffff", font=AKKU)
+    draw.text((100, y), f"{f_user}:»", "#ffffff", font=font_who)
 
     y = (y + (line_heights[0] * (20/100))) if wrap_size >= 40 else y
 
     for i, line in enumerate(text_lines):
         x = 100
         y += line_heights[i]
-        draw.text((x, y), line,  "#ffffff", font=font_who)
+        draw.text((x, y), line,  "#ffffff", font=AKKU)
 
     try:
         user_profile_pic = await c.get_profile_photos(m.from_user.id)
