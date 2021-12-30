@@ -1,6 +1,6 @@
 {
     "name": "SomeStickerBot",
-    "description": "https://telegram.dog/somestickerbot",
+    "description": "I just create telegram stickers from the text messages you send me",
     "keywords": [
         "telegram",
         "best",
@@ -9,9 +9,9 @@
         "open",
         "source"
     ],
-    "success_url": "https://telegram.dog/somestickerbot",
-    "website": "https://github.com/eyaadh/stickerBot",
-    "repository": "https://github.com/eyaadh/stickerBot",
+    "success_url": "https://github.com/PANDITHAN/text-to-sticker",
+    "website": "https://github.com/PANDITHAN/text-to-sticker",
+    "repository": "https://github.com/PANDITHAN/text-to-sticker",
     "env": {
         "ENV": {
             "description": "Setting this to ANYTHING will enable VARs when in ENV mode",
