@@ -191,7 +191,7 @@ async def create_sticker(c: Client, m: Message):
 
     font = ImageFont.truetype("Segan-Light.ttf", body_font_size)
     font_who = ImageFont.truetype("TitilliumWeb-Bold.ttf", 24)
-    Akku = ImageFont.truetype("", body_font_size)
+    AKKU = ImageFont.truetype("Sticky-Notes.ttf", body_font_size)
 
     img = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(img)
@@ -217,7 +217,7 @@ async def create_sticker(c: Client, m: Message):
     await rounded_rectangle(draw, ((90, in_y), (512, rec_y + line_heights[-1])), 10, fill="#000000")
 
     f_user = m.from_user.first_name + " " + m.from_user.last_name if m.from_user.last_name else m.from_user.first_name
-    draw.text((100, y), f"{f_user}:»", "#ffffff", font=font_who)
+    draw.text((100, y), f"{f_user}:»", "#ffffff", font=AKKU)
 
     y = (y + (line_heights[0] * (20/100))) if wrap_size >= 40 else y
 
