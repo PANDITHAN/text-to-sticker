@@ -42,15 +42,6 @@ START_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
-@some_sticker_bot.on_callback_query()
-async def cb_handler(bot, update):
-    if update.data == "home":
-        await update.message.edit_text(
-            text=START_TEXT.format(update.from_user.mention),
-            reply_markup=START_BUTTONS,
-            disable_web_page_preview=True
-        )
-
 logging.getLogger(__name__)
 
 is_env = bool(os.environ.get("ENV", None))
@@ -225,14 +216,14 @@ async def create_sticker(c: Client, m: Message):
     await rounded_rectangle(draw, ((90, in_y), (512, rec_y + line_heights[-1])), 10, fill="#effcde")
 
     f_user = m.from_user.first_name + " " + m.from_user.last_name if m.from_user.last_name else m.from_user.first_name
-    draw.text((100, y), f"{f_user}:", "#588237", font=font_who)
+    draw.text((100, y), f"{f_user}:-", "#ffffff", font=font_who)
 
     y = (y + (line_heights[0] * (20/100))) if wrap_size >= 40 else y
 
     for i, line in enumerate(text_lines):
         x = 100
         y += line_heights[i]
-        draw.text((x, y), line, "#030303", font=font)
+        draw.text((x, y), line, "#000000", font=font)
 
     try:
         user_profile_pic = await c.get_profile_photos(m.from_user.id)
