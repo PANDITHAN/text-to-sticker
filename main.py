@@ -270,14 +270,13 @@ async def create_sticker_group_handler(c: Client, m: Message):
 
 PANDITHAN = """╔════❰ ABOUT ❱═❍⊱❁۪۪
 ║╭━━━━━━━━━━━━━━━➣ 
-║┣⪼ 
-║┣⪼ 
-║┣⪼
-║┣⪼ 
-║┣⪼ 
-║┣⪼ 
-║┣⪼ 
-║┣⪼ 
+║┣⪼ 𝙼𝚈 𝙽𝙰𝙼𝙴     : TEXT TO STICKER
+║┣⪼ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁     : [⸙ꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋM-STER](https://t.me/PANDITHAN_SIR) 
+║┣⪼ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈     : PYROGRAM
+║┣⪼ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴    : PYTHON 3
+║┣⪼ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁  : ZeeT
+║┣⪼ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]
+║┣⪼ 𝙲𝚁𝙴𝙳𝙸𝚃𝚂     : [PANDITHAN](https://github.com/PANDITHAN)
 ║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍⊱❁۪۪"""
 
 MINNAL_MURALI = InlineKeyboardMarkup(
