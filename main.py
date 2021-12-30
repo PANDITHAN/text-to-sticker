@@ -22,7 +22,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 
-START_TEXT = """👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ
+START_TEXT = """*👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ*
 
 𝙸 𝚊𝚖 𝚊𝚗 𝚝𝚎𝚡𝚝 𝚝𝚘 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚋𝚘𝚝
 
@@ -30,7 +30,7 @@ START_TEXT = """👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ
 
 ©[M-STER TECH](https://t.me/M_STER_TECH)"""
 
-HELP_ANEE = """👋Hi ᴅᴇᴀʀ
+HELP_ANEE = """*👋Hi ᴅᴇᴀʀ*
 
 I do not have much to say on help - I just create telegram stickers from the text messages you send me
         My update channel [M-STER TECH](https://t.me/M_STER_TECH)"""
