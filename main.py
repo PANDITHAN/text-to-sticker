@@ -28,12 +28,13 @@ START_TEXT = """**👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ**
 
 𝙸 𝚓𝚞𝚜𝚝 𝚌𝚛𝚎𝚊𝚝𝚎 𝚝𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚏𝚛𝚘𝚖 𝚝𝚑𝚎 𝚝𝚎𝚡𝚝 𝚖𝚎𝚜𝚜𝚊𝚐𝚎𝚜 𝚢𝚘𝚞 𝚜𝚎𝚗𝚍 𝚖𝚎
 
-©[M-STER TECH](https://t.me/M_STER_TECH)"""
+[©M-STER TECH](https://t.me/M_STER_TECH)"""
 
 HELP_ANEE = """**👋Hi ᴅᴇᴀʀ**
 
 I do not have much to say on help - I just create telegram stickers from the text messages you send me
-        My update channel [M-STER TECH](https://t.me/M_STER_TECH)"""
+   
+[©M-STER TECH](https://t.me/M_STER_TECH)"""
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
