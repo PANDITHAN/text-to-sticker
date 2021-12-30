@@ -42,7 +42,7 @@ START_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
-@some_sticker_bot.update: CallbackQuery
+@some_sticker_bot.on_callback_query()
 async def cb_handler(bot, update):
     if update.data == "home":
         await update.message.edit_text(
