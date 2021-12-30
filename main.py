@@ -266,7 +266,17 @@ async def create_sticker_group_handler(c: Client, m: Message):
     await create_sticker(c, m.reply_to_message)
     await s.delete()
 
-PANDITHAN = """COMIG SOON"""
+PANDITHAN = """╔════❰ ABOUT ❱═❍⊱❁۪۪
+║╭━━━━━━━━━━━━━━━➣ 
+║┣⪼ 
+║┣⪼ 
+║┣⪼
+║┣⪼ 
+║┣⪼ 
+║┣⪼ 
+║┣⪼ 
+║┣⪼ 
+║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍⊱❁۪۪"""
 
 MINNAL_MURALI = InlineKeyboardMarkup(
         [[
