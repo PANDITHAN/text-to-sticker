@@ -191,6 +191,7 @@ async def create_sticker(c: Client, m: Message):
 
     font = ImageFont.truetype("Segan-Light.ttf", body_font_size)
     font_who = ImageFont.truetype("TitilliumWeb-Bold.ttf", 24)
+    Akku = ImageFont.truetype("", body_font_size)
 
     img = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
     draw = ImageDraw.Draw(img)
