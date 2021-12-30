@@ -216,7 +216,7 @@ async def create_sticker(c: Client, m: Message):
     await rounded_rectangle(draw, ((90, in_y), (512, rec_y + line_heights[-1])), 10, fill="#effcde")
 
     f_user = m.from_user.first_name + " " + m.from_user.last_name if m.from_user.last_name else m.from_user.first_name
-    draw.text((100, y), f"{f_user}:-", "#ffffff", font=font_who)
+    draw.text((100, y), f"{f_user}:", "#ffffff", font=font_who)
 
     y = (y + (line_heights[0] * (20/100))) if wrap_size >= 40 else y
 
@@ -257,14 +257,14 @@ async def create_sticker(c: Client, m: Message):
 
 @some_sticker_bot.on_message(filters.text & filters.private & (~filters.command("start") | ~filters.command("help")))
 async def create_sticker_private_handler(c: Client, m: Message):
-    s = await m.reply_text("WAIT FOR SECONDS")
+    s = await m.reply_text("Wait.......")
     await create_sticker(c, m)
     await s.delete()
 
 
 @some_sticker_bot.on_message(filters.command(["sticker", "s"]) & filters.reply & filters.group)
 async def create_sticker_group_handler(c: Client, m: Message):
-    s = await m.reply_text("WAIT FOR SECONDS", reply_to_message_id=m.message_id)
+    s = await m.reply_text("Wait........", reply_to_message_id=m.message_id)
     await create_sticker(c, m.reply_to_message)
     await s.delete()
 
