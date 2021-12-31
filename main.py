@@ -38,26 +38,23 @@ HELP_ANEE = """**👋Hi ᴅᴇᴀʀ**
 I do not have much to say on help - I just create telegram stickers from the text messages you send me
         My update channel [M-STER TECH](https://t.me/M_STER_TECH)"""
 
-START_BUTTONS = InlineKeyboardMarkup(
-        [[
+START_BUTTONS = [[
         InlineKeyboardButton("UPDATE CHANNEL", url="https://t.me/M_STER_TECH"),
         InlineKeyboardButton("HOME🏡", callback_data="home")
         ]]
-    )
+    
 
-@bot.on_callback_query()
-async def cb_handler(bot: Client, update: CallbackQuery):
-    if update.data == "home":
+@bot.on_callback_query(filters.regex(r"^home$"))
+async def cb_handler(bot: Client, query: CallbackQuery):
       try:
-        await update.message.edit_text(
-            text=START_TEXT.format(update.from_user.mention),
-            reply_markup=START_BUTTONS,
+        await query.message.edit_text(
+            text=START_TEXT.format(query.from_user.mention),
+            reply_markup=InlineKeyboardMarkup(START_BUTTONS),
             disable_web_page_preview=True
         )
       except RPCError as e:
-        await update.answer(f"Error: {e}", show_alert=True)
+        await query.answer(f"Error: {e}", show_alert=True)
         LOGGER.error(e)
-    return
 
 
 
