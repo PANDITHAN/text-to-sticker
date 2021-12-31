@@ -8,7 +8,7 @@ import time
 import math
 import traceback
 import datetime
-from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid, UserNotParticipant, UserBannedInChannel
+from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid, UserNotParticipant, RPCError, UserBannedInChannel
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
@@ -22,6 +22,8 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.ERROR)
 
 START_TEXT = """**👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ**
 
@@ -46,14 +48,18 @@ START_BUTTONS = InlineKeyboardMarkup(
 @bot.on_callback_query()
 async def cb_handler(bot: Client, update: CallbackQuery):
     if update.data == "home":
+      try:
         await update.message.edit_text(
             text=START_TEXT.format(update.from_user.mention),
             reply_markup=START_BUTTONS,
             disable_web_page_preview=True
         )
+      except RPCError as e:
+        await update.answer(f"Error: {e}", show_alert=True)
+        LOGGER.error(e)
     return
 
-logging.getLogger(__name__)
+
 
 is_env = bool(os.environ.get("ENV", None))
 if is_env:
