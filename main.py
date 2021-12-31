@@ -11,7 +11,7 @@ import datetime
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid, UserNotParticipant, UserBannedInChannel
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from textwrap import TextWrapper
 from pyrogram import Client as bot
 from pyrogram import idle, filters
@@ -44,13 +44,14 @@ START_BUTTONS = InlineKeyboardMarkup(
     )
 
 @bot.on_callback_query()
-async def cb_handler(bot, update):
+async def cb_handler(bot: Client, update: CallbackQuery):
     if update.data == "home":
         await update.message.edit_text(
             text=START_TEXT.format(update.from_user.mention),
             reply_markup=START_BUTTONS,
             disable_web_page_preview=True
         )
+    return
 
 logging.getLogger(__name__)
 
