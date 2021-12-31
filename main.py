@@ -299,8 +299,8 @@ PANDITHAN = """╔════❰ ABOUT ❱═❍⊱❁۪۪
 
 MINNAL_MURALI = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('UPDATE CHANNEL', url='https://t.me/M_STER_TECH'),
-        InlineKeyboardButton('HOME🏡', callback_data='home')
+        InlineKeyboardButton("UPDATE CHANNEL", url='https://t.me/M_STER_TECH'),
+        InlineKeyboardButton("HOME🏡", callback_data='home')
         ]]
     )
 
