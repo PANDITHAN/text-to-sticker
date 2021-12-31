@@ -52,7 +52,7 @@ async def cb_handler(bot: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(START_BUTTONS),
             disable_web_page_preview=True
         )
-      except RPCError as e:
+      except Exception as e:
         await query.answer(f"Error: {e}", show_alert=True)
         LOGGER.error(e)
 
