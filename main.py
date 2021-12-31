@@ -40,11 +40,11 @@ I do not have much to say on help - I just create telegram stickers from the tex
 
 START_BUTTONS = [[
         InlineKeyboardButton("UPDATE CHANNEL", url="https://t.me/M_STER_TECH"),
-        InlineKeyboardButton("HOME🏡", callback_data="home")
+        InlineKeyboardButton("HOME🏡", callback_data="abcd")
         ]]
     
 
-@bot.on_callback_query(filters.regex(r"^home$"))
+@bot.on_callback_query(filters.regex(r"abcd"))
 async def cb_handler(bot: Client, query: CallbackQuery):
       try:
         await query.message.edit_text(
@@ -296,8 +296,8 @@ PANDITHAN = """╔════❰ ABOUT ❱═❍⊱❁۪۪
 
 MINNAL_MURALI = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton("UPDATE CHANNEL", url='https://t.me/M_STER_TECH'),
-        InlineKeyboardButton("HOME🏡", callback_data='home')
+        InlineKeyboardButton("UPDATE CHANNEL", url="https://t.me/M_STER_TECH"),
+        InlineKeyboardButton("HOME🏡", callback_data="abcd")
         ]]
     )
 
