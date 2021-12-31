@@ -42,6 +42,15 @@ START_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
+@some_sticker_bot.on_callback_query()
+async def cb_handler(bot, update):
+    if update.data == "home":
+        await update.message.edit_text(
+            text=START_TEXT.format(update.from_user.mention),
+            reply_markup=START_BUTTONS,
+            disable_web_page_preview=True
+        )
+
 logging.getLogger(__name__)
 
 is_env = bool(os.environ.get("ENV", None))
@@ -283,6 +292,7 @@ PANDITHAN = """╔════❰ ABOUT ❱═❍⊱❁۪۪
 MINNAL_MURALI = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('UPDATE CHANNEL', url='https://t.me/M_STER_TECH'),
+        InlineKeyboardButton('HOME🏡', callback_data='home')
         ]]
     )
 
