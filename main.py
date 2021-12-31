@@ -40,8 +40,8 @@ I do not have much to say on help - I just create telegram stickers from the tex
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('UPDATE CHANNEL', url='https://t.me/M_STER_TECH'),
-        InlineKeyboardButton('HOME🏡', callback_data='home')
+        InlineKeyboardButton("UPDATE CHANNEL", url="https://t.me/M_STER_TECH"),
+        InlineKeyboardButton("HOME🏡", callback_data="home")
         ]]
     )
 
