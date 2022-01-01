@@ -272,7 +272,8 @@ MINNAL_MURALI = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/M_STER_TECH'),
         ],]
-        InlinekeyboardButton('HOME', callback_data='home')
+        InlineKeyboardButton('Home', callback_data='home')
+        ]]
     )
 
 @some_sticker_bot.on_message(filters.text & filters.private & (~filters.command("start") | ~filters.command("help")))
