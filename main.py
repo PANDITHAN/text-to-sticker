@@ -223,18 +223,6 @@ async def create_sticker(c: Client, m: Message):
     await m.reply_sticker(
         sticker=sticker_file
     )
-
-PANDITHAN ="""**👋Hi ᴅᴇᴀʀ**
-
-I do not have much to say on help - I just create telegram stickers from the text messages you send me
-
- MADE BY [M-STER TECH](https://t.me/M_STER_TECH)"""
-
-MINNAL_MURALI = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/M_STER_TECH'),
-        ]]
-    )
     try:
         if os.path.isfile(sticker_file):
             os.remove(sticker_file)
@@ -257,6 +245,18 @@ MALIK = """╔════❰ ABOUT ❱═❍⊱❁۪۪
 MALIK2 = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴', url='https://t.me/M_STER_TECH'),
+        ]]
+    )
+
+PANDITHAN ="""**👋Hi ᴅᴇᴀʀ**
+
+I do not have much to say on help - I just create telegram stickers from the text messages you send me
+
+ MADE BY [M-STER TECH](https://t.me/M_STER_TECH)"""
+
+MINNAL_MURALI = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/M_STER_TECH'),
         ]]
     )
 
