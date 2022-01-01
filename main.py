@@ -14,6 +14,20 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 
+START_TEXT = """**👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ **
+
+𝙸 𝚊𝚖 𝚊𝚗 𝚝𝚎𝚡𝚝 𝚝𝚘 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚋𝚘𝚝
+
+𝙸 𝚓𝚞𝚜𝚝 𝚌𝚛𝚎𝚊𝚝𝚎 𝚝𝚎𝚕𝚎𝚐𝚛𝚊𝚖 𝚜𝚝𝚒𝚌𝚔𝚎𝚛 𝚏𝚛𝚘𝚖 𝚝𝚑𝚎 𝚝𝚎𝚡𝚝 𝚖𝚎𝚜𝚜𝚊𝚐𝚎𝚜 𝚢𝚘𝚞 𝚜𝚎𝚗𝚍 𝚖𝚎
+
+Made by- [M-STER TECH](https://t.me/M_STER_TECH) """
+
+START_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/M_STER_TECH'),
+        ]]
+    )
+
 logging.getLogger(__name__)
 
 is_env = bool(os.environ.get("ENV", None))
@@ -211,6 +225,17 @@ async def create_sticker(c: Client, m: Message):
         sticker=sticker_file
     )
 
+PANDITHAN ="""**👋Hi ᴅᴇᴀʀ**
+
+I do not have much to say on help - I just create telegram stickers from the text messages you send me
+
+ MADE BY [M-STER TECH](https://t.me/M_STER_TECH)"""
+
+MINNAL_MURALI = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('𝚄𝙿𝙳𝙰𝚃𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/M_STER_TECH'),
+        ]]
+    )
     try:
         if os.path.isfile(sticker_file):
             os.remove(sticker_file)
@@ -220,6 +245,21 @@ async def create_sticker(c: Client, m: Message):
     except Exception as e:
         logging.error(e)
 
+MALIK = """╔════❰ ABOUT ❱═❍⊱❁۪۪
+║╭━━━━━━━━━━━━━━━➣ 
+║┣⪼ 𝙼𝚈 𝙽𝙰𝙼𝙴 : TEXT TO STICKER
+║┣⪼ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁 : [⸙ꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋꠋM-STER](https://t.me/M_STER_TECH)
+║┣⪼ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈 : PYROGRAM
+║┣⪼ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴 : PYTHON 3
+║┣⪼ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁 : ZeeT
+║┣⪼ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂 : v1.0.1 [ 𝙱𝙴𝚃𝙰 ]
+║┣⪼ 𝙲𝚁𝙴𝙳𝙸𝚃𝚂 : [PANDITHAN](https://t.me/PANDITHAN_SIR)
+║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍⊱❁۪۪۪۪ """
+MALIK2 = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴', url='https://t.me/M_STER_TECH'),
+        ]]
+    )
 
 @some_sticker_bot.on_message(filters.text & filters.private & (~filters.command("start") | ~filters.command("help")))
 async def create_sticker_private_handler(c: Client, m: Message):
