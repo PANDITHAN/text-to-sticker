@@ -4,7 +4,6 @@ import asyncio
 import secrets
 import logging
 import configparser
-from pyrogram import Client as update
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from textwrap import TextWrapper
 from pyrogram import Client, idle, filters
@@ -135,7 +134,7 @@ async def rounded_rectangle(rectangle, xy, corner_radius, fill=None, outline=Non
 
 @some_sticker_bot.on_message(filters.private & filters.command(["start"]))
 async def start_handler(c: Client, m: Message): await m.reply_text(
- text=START_TEXT.format(update.from_user.mention),
+ text=START_TEXT.format(m.from_user.mention),
         disable_web_page_preview=True,
  reply_markup=START_BUTTONS
     )
