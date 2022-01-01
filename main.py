@@ -38,6 +38,8 @@ async def cb_handler(bot, update):
             reply_markup=START_BUTTONS,
             disable_web_page_preview=True
         )
+    else:
+        await update.message.delete()
 
 logging.getLogger(__name__)
 
