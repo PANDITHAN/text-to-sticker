@@ -29,6 +29,15 @@ START_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
+@Bot.on_callback_query()
+async def cb_handler(bot, update):
+    if update.data == "home":
+        await m.message.edit_text(
+            text=START_TEXT.format(m.from_user.mention),
+            reply_markup=START_BUTTONS,
+            disable_web_page_preview=True
+        )
+
 logging.getLogger(__name__)
 
 is_env = bool(os.environ.get("ENV", None))
