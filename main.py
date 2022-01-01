@@ -140,14 +140,18 @@ async def start_handler(c: Client, m: Message): await m.reply_text(
     )
 
 
-@some_sticker_bot.on_message(filters.command("help"))
-async def help_handler(c: Client, m: Message):
-    await m.reply_text(
-        "Hi, I do not have much to say on help - I just create telegram stickers from the text messages you send me. "
-        "\nMy creator @eyaadh did a YouTube "
-        "[video](https://youtu.be/dVrA9hit4ks) on how he created me. The link for my source is on the video "
-        "description, you can fork the project and make a better version of me.",
-        disable_web_page_preview=True
+@some_sticker_bot.on_message(filters.private & filters.command(["help"]))
+async def start_handler(c: Client, m: Message): await m.reply_text(
+ text=PANDITHAN.format(m.from_user.mention),
+        disable_web_page_preview=True,
+ reply_markup=MINNAL_MURALI
+    )
+
+@some_sticker_bot.on_message(filters.private & filters.command(["about"]))
+async def start_handler(c: Client, m: Message): await m.reply_text(
+ text=MALIK.format(m.from_user.mention),
+        disable_web_page_preview=True,
+ reply_markup=MALIK2
     )
 
 
