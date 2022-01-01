@@ -32,9 +32,15 @@ START_BUTTONS = InlineKeyboardMarkup(
 
 @Bot.on_callback_query()
 async def cb_handler(bot, update):
-    if update.data == "home":
+    if update.data == "help":
         await m.message.edit_text(
             text=START_TEXT.format(m.from_user.mention),
+            reply_markup=START_BUTTONS,
+            disable_web_page_preview=True
+        )
+    elif update.data == "home":
+        await update.message.edit_text(
+            text=START_TEXT,
             reply_markup=START_BUTTONS,
             disable_web_page_preview=True
         )
