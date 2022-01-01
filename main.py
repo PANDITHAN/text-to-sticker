@@ -8,10 +8,10 @@ import time
 import math
 import traceback
 import datetime
-from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid, UserNotParticipant, RPCError, UserBannedInChannel
+from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid, UserNotParticipant, UserBannedInChannel
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery#
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton,
 from textwrap import TextWrapper
 from pyrogram import Client as bot
 from pyrogram import idle, filters
