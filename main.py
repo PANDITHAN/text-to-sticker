@@ -6,6 +6,7 @@ import logging
 import configparser
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from textwrap import TextWrapper
+from pyrogram import Client as Bot
 from pyrogram import Client, idle, filters
 from pyrogram.types import Message
 from PIL import Image, ImageDraw, ImageFont, ImageChops
