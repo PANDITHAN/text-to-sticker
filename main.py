@@ -22,8 +22,8 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
-LOGGER = logging.getLogger(__name__)
-LOGGER.setLevel(logging.ERROR)
+
+logging.getLogger(__name__)
 
 START_TEXT = """**👋𝙷𝚎𝚕𝚕𝚘 ᴅᴇᴀʀ**
 
