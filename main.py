@@ -4,6 +4,7 @@ import asyncio
 import secrets
 import logging
 import configparser
+from pyrogram import Client as update
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from textwrap import TextWrapper
 from pyrogram import Client, idle, filters
