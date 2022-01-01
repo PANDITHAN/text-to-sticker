@@ -11,7 +11,7 @@ import datetime
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid, UserNotParticipant, RPCError, UserBannedInChannel
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery#
 from textwrap import TextWrapper
 from pyrogram import Client as bot
 from pyrogram import idle, filters
@@ -42,21 +42,6 @@ START_BUTTONS = [[
         InlineKeyboardButton("UPDATE CHANNEL", url="https://t.me/M_STER_TECH"),
         InlineKeyboardButton("HOME🏡", callback_data="abcd")
         ]]
-    
-
-@bot.on_callback_query(filters.regex(r"abcd"))
-async def cb_handler(bot: Client, query: CallbackQuery):
-      try:
-        await query.message.edit_text(
-            text=START_TEXT.format(query.from_user.mention),
-            reply_markup=InlineKeyboardMarkup(START_BUTTONS),
-            disable_web_page_preview=True
-        )
-      except Exception as e:
-        await query.answer(f"Error: {e}", show_alert=True)
-        LOGGER.error(e)
-
-
 
 is_env = bool(os.environ.get("ENV", None))
 if is_env:
